@@ -334,7 +334,7 @@ public class Board extends JPanel {
 //             case KeyEvent.VK_DOWN -> tryMove(curPiece.rotateRight(), curX, curY);
 //             case KeyEvent.VK_UP -> tryMove(curPiece.rotateLeft(), curX, curY);
 //             case KeyEvent.VK_SPACE -> dropDown();
-//             case KeyEvent.VK_D -> oneLineDown();
+//             case KeyEvent.VK_F -> oneLineDown();
                 case KeyEvent.VK_P:
                  pause();
                  break;
@@ -353,8 +353,20 @@ public class Board extends JPanel {
                 case KeyEvent.VK_SPACE:
                  dropDown();
                  break;
-                case KeyEvent.VK_D:
+                case KeyEvent.VK_F:
                  oneLineDown();
+                 break;
+               case KeyEvent.VK_A:
+                 tryMove(curPiece, curX - 1, curY);
+                 break;
+                case KeyEvent.VK_D:
+                 tryMove(curPiece, curX + 1, curY);
+                 break;
+                case KeyEvent.VK_S:
+                 tryMove(curPiece.rotateRight(), curX, curY);
+                 break;
+                case KeyEvent.VK_W:
+                 tryMove(curPiece.rotateLeft(), curX, curY);
                  break;
             }
         }
